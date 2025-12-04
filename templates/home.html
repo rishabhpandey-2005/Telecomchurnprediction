@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Churn Prediction</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" 
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background: #f2f5f7;
+        }
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .result-box {
+            font-size: 1.3rem;
+            font-weight: bold;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .label-title {
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container mt-4 mb-5">
+    <div class="card p-4">
+
+        <h2 class="text-center mb-4">📊 Telco Customer Churn Prediction</h2>
+
+        <form method="POST" action="/">
+
+            <div class="row">
+
+                <!-- NUMERIC INPUTS -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Senior Citizen</label>
+                    <select class="form-control" name="query1">
+                        <option value="0">No (0)</option>
+                        <option value="1">Yes (1)</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Monthly Charges</label>
+                    <input type="number" step="0.01" class="form-control" name="query2" required>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Total Charges</label>
+                    <input type="number" step="0.01" class="form-control" name="query3" required>
+                </div>
+
+                <!-- GENDER -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Gender</label>
+                    <select class="form-control" name="query4">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+
+                <!-- PARTNER -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Partner</label>
+                    <select class="form-control" name="query5">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+
+                <!-- DEPENDENTS -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Dependents</label>
+                    <select class="form-control" name="query6">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+
+                <!-- PHONE SERVICE -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Phone Service</label>
+                    <select class="form-control" name="query7">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+
+                <!-- MULTIPLE LINES -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Multiple Lines</label>
+                    <select class="form-control" name="query8">
+                        <option>No</option>
+                        <option>Yes</option>
+                        <option>No phone service</option>
+                    </select>
+                </div>
+
+                <!-- INTERNET SERVICE -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Internet Service</label>
+                    <select class="form-control" name="query9">
+                        <option>DSL</option>
+                        <option>Fiber optic</option>
+                        <option>No</option>
+                    </select>
+                </div>
+
+                <!-- ONLINE SECURITY -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Online Security</label>
+                    <select class="form-control" name="query10">
+                        <option>No</option>
+                        <option>Yes</option>
+                        <option>No internet service</option>
+                    </select>
+                </div>
+
+                <!-- ONLINE BACKUP -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Online Backup</label>
+                    <select class="form-control" name="query11">
+                        <option>No</option>
+                        <option>Yes</option>
+                        <option>No internet service</option>
+                    </select>
+                </div>
+
+                <!-- DEVICE PROTECTION -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Device Protection</label>
+                    <select class="form-control" name="query12">
+                        <option>No</option>
+                        <option>Yes</option>
+                        <option>No internet service</option>
+                    </select>
+                </div>
+
+                <!-- TECH SUPPORT -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Tech Support</label>
+                    <select class="form-control" name="query13">
+                        <option>No</option>
+                        <option>Yes</option>
+                        <option>No internet service</option>
+                    </select>
+                </div>
+
+                <!-- STREAMING TV -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Streaming TV</label>
+                    <select class="form-control" name="query14">
+                        <option>No</option>
+                        <option>Yes</option>
+                        <option>No internet service</option>
+                    </select>
+                </div>
+
+                <!-- STREAMING MOVIES -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Streaming Movies</label>
+                    <select class="form-control" name="query15">
+                        <option>No</option>
+                        <option>Yes</option>
+                        <option>No internet service</option>
+                    </select>
+                </div>
+
+                <!-- CONTRACT -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Contract</label>
+                    <select class="form-control" name="query16">
+                        <option>Month-to-month</option>
+                        <option>One year</option>
+                        <option>Two year</option>
+                    </select>
+                </div>
+
+                <!-- PAPERLESS BILLING -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Paperless Billing</label>
+                    <select class="form-control" name="query17">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+
+                <!-- PAYMENT METHOD -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Payment Method</label>
+                    <select class="form-control" name="query18">
+                        <option>Electronic check</option>
+                        <option>Mailed check</option>
+                        <option>Bank transfer (automatic)</option>
+                        <option>Credit card (automatic)</option>
+                    </select>
+                </div>
+
+                <!-- TENURE -->
+                <div class="col-md-4 mb-3">
+                    <label class="label-title">Tenure (months)</label>
+                    <input type="number" class="form-control" name="query19" min="1" max="72" required>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary btn-lg px-5">
+                    Predict
+                </button>
+            </div>
+        </form>
+
+        <div class="mt-4">
+            {% if output1 %}
+                <div class="result-box 
+                     {% if 'CHURN' in output1 %} bg-danger text-white {% else %} bg-success text-white {% endif %}">
+                    {{ output1 }}<br>
+                    {{ output2 }}
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
