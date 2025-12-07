@@ -136,8 +136,11 @@ http://127.0.0.1:5000/
 ```
 
 ---
+## 8.Screenshot
+<img width="1366" height="674" alt="Telecom Churn Prediction" src="https://github.com/user-attachments/assets/0eac1f87-f4c5-47fa-a776-f0b92f645bd4" />
 
-## 8. Author
+
+## 9. Author
 
 Rishabh Pandey
 Final Year EXTC Student
@@ -146,6 +149,7 @@ GitHub: [https://github.com/rishabhpandey-2005](https://github.com/rishabhpandey
 
 ---
 
-## 9. License
+## 10. License
 
 This project is open-source and available under the MIT License.
+
